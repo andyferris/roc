@@ -1,17 +1,14 @@
-app "example"
-    packages {
-        pf: "https://github.com/roc-lang/basic-cli/releases/download/0.9.1/y_Ww7a2_ZGjp0ZTt9Y_pNdSqqMRdMLzHMKfdN8LWidk.tar.br",
-        parser: "https://github.com/lukewilliamboswell/roc-parser/releases/download/0.5.2/9VrPjwfQQ1QeSL3CfmWr2Pr9DESdDIXy97pwpuq84Ck.tar.br",
-    }
-    imports [
-        pf.Stdout,
-        pf.Stderr,
-        pf.Task.{ Task },
-        parser.Core.{ Parser, map, keep },
-        parser.String.{ strFromUtf8 },
-        parser.CSV.{ CSV },
-    ]
-    provides [main] to pf
+app [main] {
+    pf: platform "https://github.com/roc-lang/basic-cli/releases/download/0.9.1/y_Ww7a2_ZGjp0ZTt9Y_pNdSqqMRdMLzHMKfdN8LWidk.tar.br",
+    parser: "https://github.com/lukewilliamboswell/roc-parser/releases/download/0.5.2/9VrPjwfQQ1QeSL3CfmWr2Pr9DESdDIXy97pwpuq84Ck.tar.br",
+}
+
+import pf.Stdout
+import pf.Stderr
+import pf.Task exposing [Task]
+import parser.Core exposing [Parser, map, keep]
+import parser.String exposing [strFromUtf8]
+import parser.CSV exposing [CSV]
 
 input : Str
 input = "Airplane!,1980,\"Robert Hays,Julie Hagerty\"\r\nCaddyshack,1980,\"Chevy Chase,Rodney Dangerfield,Ted Knight,Michael O'Keefe,Bill Murray\""

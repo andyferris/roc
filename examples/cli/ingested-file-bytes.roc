@@ -1,10 +1,7 @@
-app "ingested-file-bytes"
-    packages { pf: "https://github.com/roc-lang/basic-cli/releases/download/0.9.1/y_Ww7a2_ZGjp0ZTt9Y_pNdSqqMRdMLzHMKfdN8LWidk.tar.br" }
-    imports [
-        pf.Stdout,
-        "../../LICENSE" as license : _, # A type hole can also be used here.
-    ]
-    provides [main] to pf
+app [main] { pf: platform "https://github.com/roc-lang/basic-cli/releases/download/0.9.1/y_Ww7a2_ZGjp0ZTt9Y_pNdSqqMRdMLzHMKfdN8LWidk.tar.br" }
+
+import pf.Stdout
+import "../../LICENSE" as license : _ # A type hole can also be used here.
 
 main =
     # Due to how license is used, it will be a List U8.

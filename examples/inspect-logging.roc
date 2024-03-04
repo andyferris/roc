@@ -1,13 +1,10 @@
 #
 # Shows how Roc values can be logged
 #
-app "inspect-logging"
-    packages { pf: "https://github.com/roc-lang/basic-cli/releases/download/0.9.1/y_Ww7a2_ZGjp0ZTt9Y_pNdSqqMRdMLzHMKfdN8LWidk.tar.br" }
-    imports [
-        pf.Stdout,
-        Community,
-    ]
-    provides [main] to pf
+app [main] { pf: platform "https://github.com/roc-lang/basic-cli/releases/download/0.9.1/y_Ww7a2_ZGjp0ZTt9Y_pNdSqqMRdMLzHMKfdN8LWidk.tar.br" }
+
+import pf.Stdout
+import Community
 
 main =
     Community.empty

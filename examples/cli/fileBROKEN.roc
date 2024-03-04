@@ -1,15 +1,12 @@
-app "file-io"
-    packages { pf: "https://github.com/roc-lang/basic-cli/releases/download/0.9.1/y_Ww7a2_ZGjp0ZTt9Y_pNdSqqMRdMLzHMKfdN8LWidk.tar.br" }
-    imports [
-        pf.Stdout,
-        pf.Stderr,
-        pf.Task.{ Task },
-        pf.File,
-        pf.Path,
-        pf.Env,
-        pf.Dir,
-    ]
-    provides [main] to pf
+app [main] { pf: platform "https://github.com/roc-lang/basic-cli/releases/download/0.9.1/y_Ww7a2_ZGjp0ZTt9Y_pNdSqqMRdMLzHMKfdN8LWidk.tar.br" }
+
+import pf.Stdout
+import pf.Stderr
+import pf.Task exposing [Task]
+import pf.File
+import pf.Path
+import pf.Env
+import pf.Dir
 
 main : Task {} I32
 main =

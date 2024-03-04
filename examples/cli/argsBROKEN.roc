@@ -1,7 +1,8 @@
-app "args"
-    packages { pf: "https://github.com/roc-lang/basic-cli/releases/download/0.9.1/y_Ww7a2_ZGjp0ZTt9Y_pNdSqqMRdMLzHMKfdN8LWidk.tar.br" }
-    imports [pf.Stdout, pf.Arg, pf.Task.{ Task }]
-    provides [main] to pf
+app [main] { pf: platform "https://github.com/roc-lang/basic-cli/releases/download/0.9.1/y_Ww7a2_ZGjp0ZTt9Y_pNdSqqMRdMLzHMKfdN8LWidk.tar.br" }
+
+import pf.Stdout
+import pf.Arg
+import pf.Task exposing [Task]
 
 main : Task {} I32
 main =
